@@ -8,11 +8,11 @@ const Ninja = (props) => {
           <div>Name: {item.name}</div>
           <div>Age: {item.age}</div>
           <div>Belt: {item.belt}</div>
+          <input type="checkbox" onChange={() => props.deleteNinja(item)} />
         </div>
       )
     );
   });
-
   return <div className="ninja">{ninjaInfo}</div>;
 };
 

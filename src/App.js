@@ -25,12 +25,12 @@ export default class App extends Component {
     });
   };
 
-  newToDo = () => {
+  deleteNinja = (ninja) => {
+    console.log(ninja);
     this.setState({
-      todoItems: [
-        ...this.state.todoItems,
-        { action: this.state.newTodo, completed: false },
-      ],
+      ninjas: this.state.ninjas.filter(
+        (ninjaInArray) => ninjaInArray !== ninja
+      ),
     });
   };
 
@@ -39,7 +39,7 @@ export default class App extends Component {
       <div>
         <div>Welcome</div>
         <AddNinja addNinjaToList={this.addNinjaToList} />
-        <Ninja ninjas={this.state.ninjas} />
+        <Ninja ninjas={this.state.ninjas} deleteNinja={this.deleteNinja} />
       </div>
     );
   }
