@@ -1,7 +1,7 @@
 import React from "react";
 
 const Ninja = (props) => {
-  const ninjaInfo = props.info.map((item) => {
+  const ninjaInfo = props.ninjas.map((item) => {
     return (
       item.age > 27 && (
         <div className="ninja" key={item.name}>
